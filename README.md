@@ -29,13 +29,17 @@ getv-design-author = { index = "getv-design" }
 ```
 
 ```sh
-uv add "getv-design-author[langchain]"     # or [openai-agents], [pydantic-ai]
+uv add "getv-design-author[langchain]" langchain     # or [openai-agents], [pydantic-ai]
 ```
+
+The extras bring each library's tool layer: `[langchain]` installs `langchain-core`, so add
+`langchain` for its `create_agent`; `[pydantic-ai]` needs Python 3.11 or later, as
+Pydantic AI does.
 
 ### pip
 
 ```sh
-pip install --extra-index-url https://getv-design.github.io/python/simple/ "getv-design-author[langchain]"
+pip install --extra-index-url https://getv-design.github.io/python/simple/ "getv-design-author[langchain]==0.1.0" langchain
 ```
 
 `--extra-index-url` also looks on PyPI, and pip takes the highest version it finds
