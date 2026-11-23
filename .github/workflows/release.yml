@@ -1,0 +1,51 @@
+# Turns a branch `incoming/<tag>` into a release, then rebuilds the index.
+#
+# getv-design/vd-app builds and tests the packages (its publish-author-python.yml)
+# and, once a person approves its `release` environment, pushes them here on a
+# branch `incoming/<tag>` with a deploy key: `dist/` holds the files and
+# `release.json` says the tag, the title and which Pythons they are for. A deploy
+# key can push but cannot make a release, so this workflow does that with this
+# repository's own token, deletes the branch so the files do not stay in the
+# history, and starts index.yml to publish the new links.
+name: Release
+
+on:
+  push:
+    branches: ['incoming/**']
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Release the files
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          tag=$(jq -r .tag release.json)
+          title=$(jq -r .title release.json)
+          requires=$(jq -r .requires_python release.json)
+          source=$(jq -r .source release.json)
+          if ! [[ "$tag" =~ ^[a-z0-9-]+-v[0-9][0-9A-Za-z.+-]*$ ]] || [ "incoming/$tag" != "$BRANCH" ]; then
+            echo "::error::release.json's tag ($tag) does not match the branch ($BRANCH)."
+            exit 1
+          fi
+          if gh release view "$tag" >/dev/null 2>&1; then
+            echo "$tag is already released; nothing new."
+          else
+            printf '%s\n\nrequires-python: %s\n' "$source" "$requires" > notes.md
+            gh release create "$tag" dist/* --target main --title "$title" --notes-file notes.md
+          fi
+          git push origin --delete "$BRANCH"
+          gh workflow run index.yml --ref main

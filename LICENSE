@@ -1,0 +1,177 @@
+The vDesign Author Licence, version 1.0
+
+Copyright © 2026 vDesign. All rights not granted below are reserved.
+
+This licence lets you use the vDesign Author package free of charge, including in
+commercial products, and pass on copies of it as long as they are unchanged.
+By using, copying or redistributing the Software, You accept this licence.
+
+
+1. Definitions
+
+"Software" means the vDesign Author package: the JavaScript files and TypeScript
+declaration files in this package, including the tools they provide, in the form the Licensor publishes them, and any copy of them. It does
+not include the third-party components described in clause 6.
+
+"Licensor" means vDesign, an individual. You can contact the Licensor at
+teams@getv.design.
+
+"You" means the person or organisation that uses, copies or redistributes the
+Software under this licence.
+
+
+2. Grant
+
+The Licensor grants You a free, worldwide, non-exclusive, non-transferable,
+royalty-free licence to:
+
+  (a) use the Software for any purpose, including commercial purposes;
+  (b) copy it; and
+  (c) redistribute it unmodified, including as part of a website, an
+      application, a service or a build pipeline that You make, sell or give
+      away.
+
+The people who use Your website, application or service may use the Software
+as part of it. They need nothing further from the Licensor to do so.
+
+
+3. Redistribution
+
+You may redistribute the Software bundled into Your own product, or serve it,
+as this package and under its own name, from npm or a public npm mirror such
+as a content delivery network, as long as:
+
+  (a) the copyright and licence notices in the Software, including the comment
+      at the start of each JavaScript file, are kept, in the code or in a
+      notices file that Your build tool produces from it; and
+  (b) when You redistribute the package as a whole, this licence and the file
+      THIRD_PARTY_NOTICES.txt go with it.
+
+Processing the Software with a bundler, minifier, transpiler or similar build
+tool, including tree-shaking, code-splitting and changing the module format,
+is not modification under this licence, as long as it does not change what the
+Software does. Configuring the Software through its documented options, and
+calling its public interface or its command, are uses of it, not
+modifications.
+
+Everyone who receives a copy of the Software from You receives this licence
+from the Licensor directly.
+
+
+4. Restrictions
+
+Except as clauses 2 and 3 allow, You may not:
+
+  (a) modify the Software, or distribute a modified copy of it or a work based
+      on it (a product that includes the unmodified Software is not a work
+      based on it);
+  (b) decompile, disassemble or otherwise reverse engineer the Software;
+  (c) remove or change any copyright, licence or attribution notice in the
+      Software; or
+  (d) misrepresent where the Software came from, including by presenting it as
+      Your own work.
+
+Restrictions (a) and (b) apply only to the extent the law allows. Where
+applicable law expressly gives You a right to do something despite a
+restriction like these, this licence does not take that right away. Examples
+are Articles 5 and 6 of EU Directive 2009/24/EC (on the legal protection of
+computer programs) and section 52(1)(ab) and (ac) of the Indian Copyright Act,
+1957, which allow certain acts needed to study how a program works or to make
+an independently created program work with it.
+
+Nothing in this licence stops You from making a product that competes with
+vDesign, including one that reads or writes the .vd format.
+
+
+5. Your documents and the open format
+
+The Licensor claims no rights in the documents You or Your agents create, read
+or change with the Software, or in anything the Software produces from them.
+
+The .vd format specification is published separately under the Creative
+Commons Attribution 4.0 International licence (CC BY 4.0). Anyone may
+implement the format, free of charge and without asking permission. The text
+of the vDesign skill that this package carries and hands to Your agent is part
+of that specification, and stays under CC BY 4.0 wherever it goes. This
+licence covers the Software only. See https://getv.design/docs/licence/.
+
+
+6. Third-party components
+
+This package also contains code, WebAssembly modules and fonts made by others.
+They are not part
+of the Software, and are listed in THIRD_PARTY_NOTICES.txt with their licences
+in full. Those components are governed by their own licences, not by this one,
+and nothing in this licence limits the rights those licences give You.
+
+
+7. Trademarks
+
+This licence gives You no rights to the name "vDesign" or to any vDesign logo,
+except to say accurately that Your product uses the Software.
+
+You need not show any credit for the Software to the people who use Your
+product: the notices in the code, under clause 3, are the only ones You must
+keep. A visible "Made with vDesign" link is appreciated. The Software shows
+no watermark and needs no licence key.
+
+
+8. Network and data
+
+The Software sends no telemetry, collects no information about You or the
+people who use Your product, and makes no network requests. It reads and
+writes documents only through the code You give it to do so, and, if You use
+its FileTools, the files in the folder You name and nothing outside it. Apart
+from those documents, it reads only:
+
+  (a) the files You, or the documents You give the Software, name;
+  (b) its own files, including the fonts and WebAssembly modules in this
+      package; and
+  (c) the fonts installed on the machine that runs it, unless You tell it not
+      to.
+
+
+9. Versions and termination
+
+The Licensor may publish later versions of the Software under different terms.
+That does not change the licence of a version already published: the licence a
+version was published with is not revoked, except under this clause.
+
+If You breach this licence and do not cure the breach within 30 days after the
+Licensor notifies You of it, Your rights under this licence end, and You must
+stop using and redistributing the Software. That does not end the licence of
+anyone who received the Software from You and complies with this licence.
+
+
+10. No warranty; limitation of liability
+
+The Software is provided free of charge, "as is" and "as available", without
+warranty of any kind, express or implied, including any warranty of
+merchantability, fitness for a particular purpose, title or non-infringement,
+to the fullest extent the law allows. You use it at Your own risk.
+
+To the fullest extent the law allows, the Licensor is not liable for any
+indirect, incidental, special, consequential, exemplary or punitive damages,
+or for any loss of profits, revenue, data, business or goodwill, arising out of
+or in connection with the Software or this licence, however caused and on any
+theory of liability, even if the Licensor was told such loss was possible.
+
+To the fullest extent the law allows, the Licensor's total liability arising
+out of or in connection with the Software or this licence is limited to the
+greater of the amount You paid the Licensor for the Software and 100 US
+dollars (USD 100).
+
+Nothing in this licence excludes or limits any liability that cannot be
+excluded or limited by law, such as liability for fraud, or for death or
+personal injury caused by negligence.
+
+
+11. Governing law and courts
+
+This licence, and any dispute arising out of or in connection with it or the
+Software, are governed by the laws of India. The courts in India that have
+jurisdiction over the dispute have exclusive jurisdiction to settle it.
+
+This clause does not take away any protection You have, as a consumer, under
+the mandatory law of the country where You live, or any right You have under
+that law to bring proceedings in its courts.
