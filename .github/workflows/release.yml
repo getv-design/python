@@ -12,6 +12,14 @@ name: Release
 on:
   push:
     branches: ['incoming/**']
+  # By hand, naming a branch already pushed: a push only starts this workflow when the
+  # pushed commit carries this file, so a hand-off that was not based on `main` waits
+  # here until someone runs it.
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'The incoming branch, e.g. incoming/author-v0.1.0'
+        required: true
 
 permissions:
   contents: write
@@ -26,11 +34,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch || github.ref }}
 
       - name: Release the files
         env:
           GH_TOKEN: ${{ github.token }}
-          BRANCH: ${{ github.ref_name }}
+          BRANCH: ${{ inputs.branch || github.ref_name }}
         run: |
           set -euo pipefail
           tag=$(jq -r .tag release.json)
